@@ -1,0 +1,2 @@
+add_executable(test_vector_construct test_vector_construct.cpp)
+add_executable(test_vector_operators test_vector_operators.cpp)
