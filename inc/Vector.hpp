@@ -102,6 +102,11 @@ inline Vector3<_T> cross_product(Vector3<_T> const &a, Vector3<_T> const &b) {
       a.x * b.y - a.y * b.x);
 }
 
+template <typename _Stream, typename _T>
+inline _Stream &operator<<(_Stream &os, Vector3<_T> const &v) {
+  return os << "[" << v.x << "," << v.y << "," << v.z << "]";
+}
+
 using Vector3f = Vector3<float>;
 
 #endif  // __RENDER_VECTOR_HPP__

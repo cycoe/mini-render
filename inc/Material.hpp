@@ -18,7 +18,10 @@ inline Vector3f reflect(Vector3f const &I, Vector3f const &N) {
 //
 // If the ray is outside, you need to make cosi positive cosi = -N.I
 //
-// If the ray is inside, you need to invert the refractive indices and negate the normal N
+// If the ray is inside, you need to invert the refractive indices and negate
+// the normal N
+//
+// Caution: I must be normalized, R returned is already normalized
 inline Vector3f refract(Vector3f const &I, Vector3f const &N, float ior) {
   float cosi = clamp(-1.f, 1.f, dot_product(I, N));
   float etai = 1.f, etat = ior;
