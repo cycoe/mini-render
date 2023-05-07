@@ -23,6 +23,8 @@ public:
   inline Vector3<_T> operator/(Vector3<_T> const& rhs) const;
   inline Vector3<_T> operator*(_T s) const;
   inline Vector3<_T> operator/(_T s) const;
+  friend Vector3<_T> operator*(_T s, Vector3<_T> const& v);
+  inline Vector3<_T> operator-(void) const;
 
   inline _T norm(void) const;
   inline Vector3<_T> normalized(void) const;
@@ -66,6 +68,16 @@ Vector3<_T> Vector3<_T>::operator*(_T s) const {
 template <typename _T>
 Vector3<_T> Vector3<_T>::operator/(_T s) const {
   return this->binary_op_scalar(s, std::divides<_T>());
+}
+
+template <typename _T>
+Vector3<_T> operator*(_T s, Vector3<_T> const &v) {
+  return v.binary_op_scalar(s, std::multiplies<_T>());
+}
+
+template <typename _T>
+Vector3<_T> Vector3<_T>::operator-(void) const {
+  return {-x, -y, -z};
 }
 
 template <typename _T>
