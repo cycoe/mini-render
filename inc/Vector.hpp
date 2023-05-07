@@ -15,17 +15,17 @@ public:
   Vector3(_T _x, _T _y, _T _z) : x(_x), y(_y), z(_z) { }
   Vector3(Vector3<_T> const& rhs) = default;
 
-  Vector3<_T> binary_op(Vector3<_T> const& rhs, BinaryOp_t op) const;
-  Vector3<_T> binary_op_scalar(_T s, BinaryOp_t op) const;
-  Vector3<_T> operator+(Vector3<_T> const& rhs) const;
-  Vector3<_T> operator-(Vector3<_T> const& rhs) const;
-  Vector3<_T> operator*(Vector3<_T> const& rhs) const;
-  Vector3<_T> operator/(Vector3<_T> const& rhs) const;
-  Vector3<_T> operator*(_T s) const;
-  Vector3<_T> operator/(_T s) const;
+  inline Vector3<_T> binary_op(Vector3<_T> const& rhs, BinaryOp_t op) const;
+  inline Vector3<_T> binary_op_scalar(_T s, BinaryOp_t op) const;
+  inline Vector3<_T> operator+(Vector3<_T> const& rhs) const;
+  inline Vector3<_T> operator-(Vector3<_T> const& rhs) const;
+  inline Vector3<_T> operator*(Vector3<_T> const& rhs) const;
+  inline Vector3<_T> operator/(Vector3<_T> const& rhs) const;
+  inline Vector3<_T> operator*(_T s) const;
+  inline Vector3<_T> operator/(_T s) const;
 
-  _T norm(void) const;
-  Vector3<_T> normalized(void) const;
+  inline _T norm(void) const;
+  inline Vector3<_T> normalized(void) const;
 };
 
 template <typename _T>
