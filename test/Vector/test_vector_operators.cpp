@@ -1,8 +1,7 @@
-#include "Vector.hpp"
 #include <algorithm>
 #include <cassert>
-
-constexpr float epsilon = 0.0001f;
+#include "Vector.hpp"
+#include "Utils.hpp"
 
 void test_vector_binary_op(void) {
   Vector3<float> vec_a(1.f, 2.f, 3.f);
