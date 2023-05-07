@@ -23,7 +23,6 @@ public:
   inline Vector3<_T> operator/(Vector3<_T> const& rhs) const;
   inline Vector3<_T> operator*(_T s) const;
   inline Vector3<_T> operator/(_T s) const;
-  friend Vector3<_T> operator*(_T s, Vector3<_T> const& v);
   inline Vector3<_T> operator-(void) const;
 
   inline _T norm(void) const;
