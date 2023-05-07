@@ -78,4 +78,17 @@ Vector3<_T> Vector3<_T>::normalized(void) const {
   return *this / this->norm();
 }
 
+template <typename _T>
+inline _T dot_product(Vector3<_T> const &a, Vector3<_T> const &b) {
+  return a.x * b.x + a.y * b.y + a.z * b.z;
+}
+
+template <typename _T>
+inline Vector3<_T> cross_product(Vector3<_T> const &a, Vector3<_T> const &b) {
+  return Vector3<_T>(
+      a.y * b.z - a.z * b.y,
+      a.z * b.x - a.x * b.z,
+      a.x * b.y - a.y * b.x);
+}
+
 #endif  // __RENDER_VECTOR_HPP__
