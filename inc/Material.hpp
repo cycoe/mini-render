@@ -67,4 +67,21 @@ inline float fresnel(Vector3f const &I, Vector3f const &N, float ior) {
   }
 }
 
+class Material {
+public:
+  virtual Vector3f sample(Vector3f const& wo, Vector3f const& n) = 0;
+  virtual float pdf(Vector3f const& wi, Vector3f const& wo, Vector3f const& n) = 0;
+  virtual Vector3f eval(Vector3f const& wi, Vector3f const& wo, Vector3f const& n) = 0;
+
+  inline bool has_emission(void) const;
+  inline Vector3f get_emission(void) const;
+
+protected:
+  Vector3f m_emission;
+};
+
+bool Material::has_emission(void) const { return m_emission.norm() > epsilon; }
+
+Vector3f Material::get_emission(void) const { return m_emission; }
+
 #endif  // __RENDER_MATERIAL_HPP__
